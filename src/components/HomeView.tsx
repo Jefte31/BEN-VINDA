@@ -30,8 +30,9 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateToExpeditions }) =
             <h2>Mais que destinos,<br /><em>histórias para viver.</em></h2>
           </div>
           <div className="intro-copy">
-            <p>Acreditamos que ninguém deveria deixar de viver uma experiência por falta de companhia, medo ou dificuldade de planejamento.</p>
-            <p>Por isso criamos viagens em grupos reduzidos, com planejamento cuidadoso, suporte próximo e experiências pensadas para promover conexão entre pessoas e destinos.</p>
+            <p>A <strong>BENVIVA</strong> nasceu de uma inquietação: a maioria das viagens oferecidas no mercado oscila entre a solidão de viajar por conta própria e a frieza impessoal de excursões comerciais lotadas.</p>
+            <p>Escolhemos um caminho diferente. Nossas expedições acontecem sempre em <strong>grupos pequenos de até 15 pessoas</strong>, com curadoria humana, hospedagens que contam histórias e guias que cuidam de cada participante com zelo e sensibilidade.</p>
+            <div className="quote-card"><em>«Você pode chegar desacompanhada. Mas nos primeiros dez minutos de conversa em torno de uma mesa redonda, você entenderá que encontrou a sua turma.»</em></div>
           </div>
         </div>
       </section>
