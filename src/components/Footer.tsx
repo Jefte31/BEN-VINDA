@@ -7,13 +7,11 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigateHome, onNavigateExpeditions }) => {
-  const logoSrc = `${import.meta.env.BASE_URL}benviva-logo.svg`;
-
   return (
     <footer className="site-footer">
       <div className="site-shell footer-grid">
         <div className="footer-brand">
-          <img src={logoSrc} alt="Benviva" />
+          <span className="brand-wordmark footer-wordmark">Benviva</span>
           <p>Expedições para viver o mundo de um jeito diferente.</p>
         </div>
         <div className="footer-links">
