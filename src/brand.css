@@ -1,0 +1,82 @@
+:root {
+  --benviva-display: 'Bropella', 'Caprasimo', 'Fraunces', Georgia, serif;
+  --benviva-text: 'Epilogue', Arial, sans-serif;
+}
+
+/* A Bropella é a fonte oficial da identidade visual. Como a webfont licenciada
+   não está armazenada no repositório, Caprasimo funciona como fallback visual
+   público até que a versão web licenciada seja adicionada. */
+
+.brand-wordmark,
+h1,
+h2,
+h3,
+.display-type,
+.quote-card,
+.day-title,
+.final-cta-section::after {
+  font-family: var(--benviva-display) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.035em;
+}
+
+.brand-wordmark {
+  display: inline-block;
+  color: #676936;
+  font-size: 47px;
+  line-height: .82;
+  letter-spacing: -0.065em;
+  white-space: nowrap;
+}
+
+.footer-wordmark {
+  color: #FBE9D1;
+  font-size: 58px;
+  margin-bottom: 18px;
+}
+
+/* Textos longos permanecem em Epilogue, a fonte de apoio da marca,
+   para preservar legibilidade e a composição já aprovada. */
+body,
+button,
+input,
+textarea,
+select,
+p,
+li,
+span:not(.brand-wordmark) {
+  font-family: var(--benviva-text);
+}
+
+.nav-link,
+.header-cta,
+.btn,
+.filter-pill,
+.expedition-profile,
+.eyebrow,
+.location-line,
+.day-number {
+  font-family: var(--benviva-text);
+}
+
+.expedition-card h3,
+.catalog-hero h1,
+.detail-title-block h1,
+.section-heading h2,
+.intro-grid h2,
+.group-copy h2,
+.final-cta-inner h2,
+.principle-card h3,
+.experience-card h3 {
+  font-family: var(--benviva-display) !important;
+  font-weight: 400 !important;
+}
+
+@media (max-width: 760px) {
+  .brand-wordmark {
+    font-size: 39px;
+  }
+  .footer-wordmark {
+    font-size: 50px;
+  }
+}
