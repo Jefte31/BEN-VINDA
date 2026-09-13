@@ -10,6 +10,7 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ activeView, onNavigate }) => {
   const [open, setOpen] = useState(false);
+  const logoSrc = `${import.meta.env.BASE_URL}benviva-logo.svg`;
 
   const go = (view: SiteView) => {
     onNavigate(view);
@@ -20,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ activeView, onNavigate }) => {
     <header className="site-header">
       <div className="site-shell header-inner">
         <button className="brand-button" onClick={() => go('home')} aria-label="Ir para o início">
-          <img src="/benviva-logo.svg" className="brand-logo" alt="Benviva" />
+          <img src={logoSrc} className="brand-logo" alt="Benviva" />
         </button>
 
         <nav className="desktop-nav" aria-label="Navegação principal">
