@@ -1,6 +1,8 @@
 import React from 'react';
 import { ArrowUpRight, MapPin, Users } from 'lucide-react';
 import { Destination } from '../types';
+import { CommonsImage } from './CommonsImage';
+import { getDestinationPhotoQueries } from '../data/photoQueries';
 
 interface DestinationCardProps {
   destination: Destination;
@@ -8,10 +10,12 @@ interface DestinationCardProps {
 }
 
 export const DestinationCard: React.FC<DestinationCardProps> = ({ destination, onSelect }) => {
+  const photoQuery = getDestinationPhotoQueries(destination.slug, destination.name, destination.pais)[0];
+
   return (
     <article className="expedition-card" onClick={() => onSelect(destination)}>
       <div className="expedition-image-wrap">
-        <img src={destination.heroImage} alt={destination.name} className="expedition-image" referrerPolicy="no-referrer" />
+        <CommonsImage query={photoQuery} alt={destination.name} className="expedition-image" />
         <span className="expedition-number">{String(destination.orderNumber).padStart(2, '0')}</span>
         <span className="expedition-group"><Users size={13} /> até {destination.grupoMaximo}</span>
       </div>
