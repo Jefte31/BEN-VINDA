@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Heart, Users, Compass, Sparkles } from 'lucide-react';
+import { CommonsImage } from './CommonsImage';
 
 interface HomeViewProps {
   onNavigateToExpeditions: () => void;
@@ -9,7 +10,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateToExpeditions }) =
   return (
     <div className="home-page">
       <section className="hero-home">
-        <div className="hero-photo" aria-hidden="true" />
+        <CommonsImage query="Salar de Uyuni Bolivia landscape" alt="Salar de Uyuni, Bolívia" className="hero-photo" eager />
         <div className="hero-overlay" aria-hidden="true" />
         <div className="site-shell hero-content">
           <span className="eyebrow light">Expedições em pequenos grupos</span>
@@ -40,7 +41,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateToExpeditions }) =
       <section className="group-section">
         <div className="site-shell group-layout">
           <div className="group-image-wrap">
-            <div className="group-image" aria-hidden="true" />
+            <CommonsImage query="Fernando de Noronha Brazil" alt="Fernando de Noronha" className="group-image" />
             <div className="postcard-stamp">até<br /><strong>15</strong><br />viajantes</div>
           </div>
           <div className="group-copy">
