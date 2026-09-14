@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, CalendarDays, Check, ChevronDown, ChevronUp, Clock3, MapPin, Mountain, Users, X } from 'lucide-react';
 import { Destination } from '../types';
+import { CommonsImage } from './CommonsImage';
+import { DestinationGallery } from './DestinationGallery';
+import { getDestinationPhotoQueries } from '../data/photoQueries';
 
 interface DestinationDetailViewProps {
   destination: Destination;
@@ -13,11 +16,12 @@ const formatBRL = (value: number) => new Intl.NumberFormat('pt-BR', { style: 'cu
 export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({ destination, onBack, onReserve }) => {
   const [openDay, setOpenDay] = useState<number>(1);
   const roteiro = destination.roteiro?.length ? destination.roteiro : destination.itinerary;
+  const heroQuery = getDestinationPhotoQueries(destination.slug, destination.name, destination.pais)[0];
 
   return (
     <div className="detail-page">
       <section className="detail-hero">
-        <img src={destination.heroImage} alt={destination.name} className="detail-hero-image" referrerPolicy="no-referrer" />
+        <CommonsImage query={heroQuery} alt={destination.name} className="detail-hero-image" eager />
         <div className="detail-hero-shade" />
         <div className="site-shell detail-hero-content">
           <button className="back-button" onClick={onBack}><ArrowLeft size={17} /> Todas as expedições</button>
@@ -59,6 +63,8 @@ export const DestinationDetailView: React.FC<DestinationDetailViewProps> = ({ de
             ))}
           </div>
         </section>
+
+        <DestinationGallery destination={destination} />
 
         <section className="detail-section itinerary-section">
           <div className="section-heading"><span className="eyebrow">Seu roteiro</span><h2>Dia a dia, sem pressa.</h2></div>
