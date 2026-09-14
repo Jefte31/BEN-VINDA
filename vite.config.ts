@@ -4,7 +4,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 
 export default defineConfig(() => ({
-  base: process.env.GITHUB_ACTIONS ? '/BEN-VINDA/' : '/',
+  base: './',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
